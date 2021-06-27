@@ -1,13 +1,32 @@
 #include <iostream>
+#include <stdlib.h>
 
 using namespace std;
 
 int main(){
 	
-		int num, M = 1000, D = 500, C = 100, millar, centenas, decenas, unidades;
+		int num, M = 1000, D = 500, C = 100, millar, centenas, decenas, unidades, i = 1, a = 0;
 		
-		cout<<"Digite un numero: ";
-		cin>>num;
+		do{
+			
+			while(i == 1){
+			
+			system("cls");
+			
+			cout<<endl<<"Digite un numero: ";
+			cin>>num;
+			
+			if(num >= 1){
+				i++;
+				system("cls");
+				cout<<endl<<" El numero "<<num<<", en numeros romanos es: ";
+			} else {
+				cout<<"\n\n Error inesperado, porfavor intentelo nuevamente.\n\n"<<endl;
+				
+				system("pause");
+				
+			}
+		}
 		
 		unidades = num%10;
 		num /= 10;
@@ -53,15 +72,21 @@ int main(){
 		
 		switch(unidades){
 			case 1: cout<<"I"; break;
-			case 2:	cout<<"II"; break;
-			case 3: cout<<"III"; break;
-			case 4: cout<<"IV"; break;
-			case 5: cout<<"V"; break;
-			case 6: cout<<"VI"; break;
-			case 7: cout<<"VII"; break;
-			case 8: cout<<"VIII"; break;
-			case 9: cout<<"IX"; break;
+			case 2:	cout<<"II"<<endl; break;
+			case 3: cout<<"III"<<endl; break;
+			case 4: cout<<"IV"<<endl; break;
+			case 5: cout<<"V"<<endl; break;
+			case 6: cout<<"VI"<<endl; break;
+			case 7: cout<<"VII"<<endl; break;
+			case 8: cout<<"VIII"<<endl; break;
+			case 9: cout<<"IX"<<endl; break;
 		}
+		
+		cout<<"\n\n ";
+		system("pause");
+		i--;
+			
+		}while(a == 0);
 	
 	return 0;
 }
