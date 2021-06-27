@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
 	
-		int num, M = 1000, D = 500, C = 100, millar, centenas, decenas, unidades, i = 1, a = 0;
+		int num, M = 1000, D = 500, C = 100, millar, centenas, decenas, unidades, i = 1, i2 = 0;
 		
 		do{
 			
@@ -86,7 +86,7 @@ int main(){
 		system("pause");
 		i--;
 			
-		}while(a == 0);
+		}while(i2 == 0);
 	
 	return 0;
 }
