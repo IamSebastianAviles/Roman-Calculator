@@ -3,32 +3,54 @@
 
 using namespace std;
 
+void Cal(int num1), Menu();
+
 int main(){
+	Menu();
+	return 0;
+}
+
+void Menu(){
 	
-		int num, M = 1000, D = 500, C = 100, millar, centenas, decenas, unidades, i = 1, i2 = 0;
-		
-		do{
+	int i = 1, num1 = 0;
+	
+	do{
 			
 			while(i == 1){
 			
 			system("cls");
+			system("Color 09");
 			
 			cout<<endl<<"Digite un numero: ";
-			cin>>num;
+			cin>>num1;
 			
-			if(num >= 1){
+			if(num1 >= 1){
 				i++;
 				system("cls");
-				cout<<endl<<" El numero "<<num<<", en numeros romanos es: ";
+				cout<<endl<<" El numero "<<num1<<", en numeros romanos es: ";
+				Cal(num1);
 			} else {
-				cout<<"\n\n Error inesperado, porfavor intentelo nuevamente.\n\n"<<endl;
+				system("color 04");
+				cout<<"\n Error inesperado, porfavor intentelo nuevamente.\n\n";
 				
 				system("pause");
-				
+				exit(0);
 			}
+			
 		}
 		
-		unidades = num%10;
+		
+		cout<<"\n\n ";
+		system("pause");
+		i--;
+			
+		}while(1 == 1);
+}
+
+void Cal(int num){
+	int num1, M = 1000, D = 500, C = 100, millar, centenas, decenas, unidades;
+	
+	unidades = num%10;
 		num /= 10;
 		
 		decenas = num%10;
@@ -81,12 +103,4 @@ int main(){
 			case 8: cout<<"VIII"<<endl; break;
 			case 9: cout<<"IX"<<endl; break;
 		}
-		
-		cout<<"\n\n ";
-		system("pause");
-		i--;
-			
-		}while(i2 == 0);
-	
-	return 0;
 }
