@@ -1,5 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
+#include <conio.h>
+#include <sstream>
 
 using namespace std;
 
@@ -12,23 +14,44 @@ int main(){
 
 void Menu(){
 	
-	int i = 1, num1 = 0;
+	int num = 0;
+	char caracter;
+	string numstr;
+	stringstream ss;
+	
 	
 	do{
 			
-			while(i == 1){
+			while(true){
 			
 			system("cls");
 			system("Color 09");
 			
 			cout<<endl<<"Digite un numero: ";
-			cin>>num1;
+			caracter = getch();
 			
-			if(num1 >= 1){
-				i++;
+			while(caracter != 13){
+				if(caracter != 8){
+					if(caracter == 48 || caracter == 49 || caracter == 50 || caracter == 51 || caracter == 52 || caracter == 53 || caracter == 54 || caracter == 55 || caracter == 56 || caracter == 57){
+						numstr.push_back(caracter);
+						cout<<caracter;
+					}
+				} else {
+					if(numstr.length() > 0){
+						cout<<"\b \b";
+						numstr = numstr.substr(0, numstr.length() - 1);
+					}
+				}
+				caracter = getch();
+			}
+			
+			ss << numstr;
+			ss >> num;
+			
+			if(num >= 1){
 				system("cls");
-				cout<<endl<<" El numero "<<num1<<", en numeros romanos es: ";
-				Cal(num1);
+				cout<<endl<<" El numero "<<num<<", en numeros romanos es: ";
+				Cal(num);
 			} else {
 				system("color 04");
 				cout<<"\n Error inesperado, porfavor intentelo nuevamente.\n\n";
@@ -40,11 +63,12 @@ void Menu(){
 		}
 		
 		
+		
+		
 		cout<<"\n\n ";
 		system("pause");
-		i--;
 			
-		}while(1 == 1);
+		}while(true);
 }
 
 void Cal(int num){
@@ -103,4 +127,7 @@ void Cal(int num){
 			case 8: cout<<"VIII"<<endl; break;
 			case 9: cout<<"IX"<<endl; break;
 		}
+		cout<<endl<<endl;
+		system("pause");
+		Menu();
 }
